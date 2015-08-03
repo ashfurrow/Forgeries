@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "90D11B7C585D829927AA7140"
+               BlueprintIdentifier = "CC373D21B6100DFBF9B532E1"
                BuildableName = "Forgeries.framework"
                BlueprintName = "Forgeries"
                ReferencedContainer = "container:Pods.xcodeproj">

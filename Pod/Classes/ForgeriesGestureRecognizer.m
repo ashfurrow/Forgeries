@@ -1,7 +1,7 @@
-#import "ASHForgeriesGestureRecognizer.h"
+#import "ForgeriesGestureRecognizer.h"
 #import <objc/runtime.h>
 
-void *ASHForgeryGestureRecognizerTargetActionsKey = &ASHForgeryGestureRecognizerTargetActionsKey;
+void *ForgeryGestureRecognizerTargetActionsKey = &ForgeryGestureRecognizerTargetActionsKey;
 
 @interface TargetAction : NSObject
 
@@ -29,12 +29,12 @@ void *ASHForgeryGestureRecognizerTargetActionsKey = &ASHForgeryGestureRecognizer
 @implementation UIGestureRecognizer (Forgeries)
 
 - (NSMutableArray *)targetActionArray {
-    NSMutableArray *array = objc_getAssociatedObject(self, ASHForgeryGestureRecognizerTargetActionsKey);
+    NSMutableArray *array = objc_getAssociatedObject(self, ForgeryGestureRecognizerTargetActionsKey);
 
     if (array == nil) {
         array = [NSMutableArray array];
 
-        objc_setAssociatedObject(self, ASHForgeryGestureRecognizerTargetActionsKey, array, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        objc_setAssociatedObject(self, ForgeryGestureRecognizerTargetActionsKey, array, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
 
     return array;
@@ -71,7 +71,7 @@ void *ASHForgeryGestureRecognizerTargetActionsKey = &ASHForgeryGestureRecognizer
 
 @end
 
-#define ASHForgeryUIGestureRecognizerSubclassImplementation(name) \
+#define ForgeryUIGestureRecognizerSubclassImplementation(name) \
 @implementation name \
 - (instancetype)initWithTarget:(id)target action:(SEL)action { \
     self = [super initWithTarget:target action:action]; \
@@ -97,10 +97,10 @@ void *ASHForgeryGestureRecognizerTargetActionsKey = &ASHForgeryGestureRecognizer
 } \
 @end
 
-ASHForgeryUIGestureRecognizerSubclassImplementation(ASHForgeryTapGestureRecognizer)
-ASHForgeryUIGestureRecognizerSubclassImplementation(ASHForgeryPinchGestureRecognizer)
-ASHForgeryUIGestureRecognizerSubclassImplementation(ASHForgeryRotationGestureRecognizer)
-ASHForgeryUIGestureRecognizerSubclassImplementation(ASHForgerySwipeGestureRecognizer)
-ASHForgeryUIGestureRecognizerSubclassImplementation(ASHForgeryPanGestureRecognizer)
-ASHForgeryUIGestureRecognizerSubclassImplementation(ASHForgeryScreenEdgeGestureRecognizer)
-ASHForgeryUIGestureRecognizerSubclassImplementation(ASHForgeryLongPressGestureRecognizer)
+ForgeryUIGestureRecognizerSubclassImplementation(ForgeryTapGestureRecognizer)
+ForgeryUIGestureRecognizerSubclassImplementation(ForgeryPinchGestureRecognizer)
+ForgeryUIGestureRecognizerSubclassImplementation(ForgeryRotationGestureRecognizer)
+ForgeryUIGestureRecognizerSubclassImplementation(ForgerySwipeGestureRecognizer)
+ForgeryUIGestureRecognizerSubclassImplementation(ForgeryPanGestureRecognizer)
+ForgeryUIGestureRecognizerSubclassImplementation(ForgeryScreenEdgeGestureRecognizer)
+ForgeryUIGestureRecognizerSubclassImplementation(ForgeryLongPressGestureRecognizer)

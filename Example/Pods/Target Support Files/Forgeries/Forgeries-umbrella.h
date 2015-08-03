@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 
-#import "ASHForgeriesGestureRecognizer.h"
 #import "Forgeries.h"
+#import "ForgeriesGestureRecognizer.h"
 
 FOUNDATION_EXPORT double ForgeriesVersionNumber;
 FOUNDATION_EXPORT const unsigned char ForgeriesVersionString[];

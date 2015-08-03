@@ -7,13 +7,13 @@ that make sense in production code, but make testing difficult. Forgeries fixes 
 
 Currently, the library provides subclasses of the standard gesture recognizers:
 
-- ASHForgeryTapGestureRecognizer
-- ASHForgeryPinchGestureRecognizer
-- ASHForgeryRotationGestureRecognizer
-- ASHForgerySwipeGestureRecognizer
-- ASHForgeryPanGestureRecognizer
-- ASHForgeryScreenEdgeGestureRecognizer
-- ASHForgeryLongPressGestureRecognizer
+- ForgeryTapGestureRecognizer
+- ForgeryPinchGestureRecognizer
+- ForgeryRotationGestureRecognizer
+- ForgerySwipeGestureRecognizer
+- ForgeryPanGestureRecognizer
+- ForgeryScreenEdgeGestureRecognizer
+- ForgeryLongPressGestureRecognizer
 
 These subclasses keep track of the number of times they've invoked their targets' actions; a handy interface to `UIGestureRecognizer` is provided:
 
@@ -55,7 +55,7 @@ What we need to do is set that property before it is lazily loaded. Here's our t
 
 ```objc
 MyViewController *subject = /* Instantiate somehow */
-ASHForgeryTapGestureRecognizer *recognizer = [[ASHForgeryTapGestureRecognizer alloc] initWithTarget:subject action:@selector(handleGestureRecognizer:)];
+ForgeryTapGestureRecognizer *recognizer = [[ForgeryTapGestureRecognizer alloc] initWithTarget:subject action:@selector(handleGestureRecognizer:)];
 subject.recognizer = recognizer;
 
 /* Optionally, set the testing_location and testing_velocity properties on recognizer. */
