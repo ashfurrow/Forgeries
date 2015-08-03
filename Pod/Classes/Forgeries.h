@@ -1,1 +1,1 @@
-#import <Forgeries/ASHForgeriesGestureRegocnizer.h>
+#import <Forgeries/ASHForgeriesGestureRecognizer.h>
