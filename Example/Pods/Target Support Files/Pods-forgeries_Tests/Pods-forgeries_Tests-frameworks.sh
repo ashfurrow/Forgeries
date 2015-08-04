@@ -52,10 +52,10 @@ code_sign_if_enabled() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework 'Pods-forgeries_Tests/Expecta.framework'
-  install_framework 'Pods-forgeries_Tests/Specta.framework'
+  install_framework 'Pods-Forgeries_Tests/Expecta.framework'
+  install_framework 'Pods-Forgeries_Tests/Specta.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework 'Pods-forgeries_Tests/Expecta.framework'
-  install_framework 'Pods-forgeries_Tests/Specta.framework'
+  install_framework 'Pods-Forgeries_Tests/Expecta.framework'
+  install_framework 'Pods-Forgeries_Tests/Specta.framework'
 fi

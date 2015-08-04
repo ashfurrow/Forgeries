@@ -5,7 +5,11 @@ that make sense in production code, but make testing difficult. Forgeries fixes 
 
 ## Usage
 
-Currently, the library provides subclasses of the standard gesture recognizers:
+Currently, the library provides subclasses of the standard gesture recognizers, as well as a replacement for `NSUserDefaults`.
+
+### Gesture Recognizers
+
+The following are Forgeries' subclasses for gesture recognizers.
 
 - ForgeryTapGestureRecognizer
 - ForgeryPinchGestureRecognizer
@@ -25,7 +29,17 @@ These subclasses keep track of the number of times they've invoked their targets
 @end
 ```
 
-The trick is to use the subclasses in _testing only_. I like to use dependency injection. 
+### User Defaults
+
+There is also a replacement for `NSUserDefaults` named `ForgeriesUserDefaults`. Use this instead of modifying the `standardUserDefaults` singleton. 
+
+The replacement also includes an optional `replaceStandardUserDefaultsWith:`, which uses OCMock. You need to separately install OCMock in order to use this. 
+
+Or, you can (and should) do the following...
+
+### Dependency Injection
+
+The trick is to use Forgeries in _testing only_. A great way to do this is via _Dependency Injection_. This means injecting a dependency into an instance, instead of having that instance create the dependency itself, or access shared state. Let's take a look at an example.
 
 Say you're testing `MyViewController`, you'd use lazy loading for your recognizer.
 
@@ -97,6 +111,7 @@ import Forgeries
 ## Author
 
 Ash Furrow, ash@ashfurrow.com
+Orta Therox, orta.therox@gmail.com
 
 ## License
 
