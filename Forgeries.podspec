@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "Forgeries"
-  s.version          = "0.1.0"
+  s.version          = "0.2.0"
   s.summary          = "Helper methods for testing iOS code."
   s.description      = <<-DESC
                        Some helper methods for writing unit tests against iOS code. Currently:
@@ -9,7 +9,8 @@ Pod::Spec.new do |s|
                        DESC
   s.homepage         = "https://github.com/ashfurrow/Forgeries"
   s.license          = 'MIT'
-  s.author           = { "Ash Furrow" => "ash@ashfurrow.com" }
+  s.authors          = { "Ash Furrow" => "ash@ashfurrow.com" 
+                         "Orta Therox" => "orta.therox@gmail.com" }
   s.source           = { :git => "https://github.com/ashfurrow/Forgeries.git", :tag => s.version }
   s.social_media_url = 'https://twitter.com/ashfurrow'
   s.platform     = :ios, '7.0'
