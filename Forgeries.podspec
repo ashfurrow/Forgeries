@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
                        DESC
   s.homepage         = "https://github.com/ashfurrow/Forgeries"
   s.license          = 'MIT'
-  s.authors          = { "Ash Furrow" => "ash@ashfurrow.com" 
+  s.authors          = { "Ash Furrow" => "ash@ashfurrow.com", 
                          "Orta Therox" => "orta.therox@gmail.com" }
   s.source           = { :git => "https://github.com/ashfurrow/Forgeries.git", :tag => s.version }
   s.social_media_url = 'https://twitter.com/ashfurrow'
