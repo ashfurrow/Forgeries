@@ -1,6 +1,6 @@
 PODS:
   - Expecta (1.0.2)
-  - Forgeries (0.1.0)
+  - Forgeries (0.2.0)
   - Specta (1.0.3)
 
 DEPENDENCIES:
@@ -14,7 +14,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Expecta: 54e8a3530add08f4f0208c111355eda7cde74a53
-  Forgeries: ce03936ada2a8d33d3711d7bb7123be505b83430
+  Forgeries: 8a2ff88a8c05ac1b82488d1c47a154f8decf7bc8
   Specta: cf3e4188cf35375c3ee2cd03f8db8f1f4ef98234
 
-COCOAPODS: 0.38.0
+COCOAPODS: 0.38.2
