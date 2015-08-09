@@ -51,9 +51,6 @@ code_sign_if_enabled() {
 }
 
 
-if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework 'Pods/Forgeries.framework'
-fi
-if [[ "$CONFIGURATION" == "Release" ]]; then
+if [[ "$CONFIGURATION" == "Debug copy" ]]; then
   install_framework 'Pods/Forgeries.framework'
 fi

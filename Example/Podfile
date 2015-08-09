@@ -3,7 +3,7 @@ use_frameworks!
 
 pod "Forgeries", :path => "../"
 
-target 'Forgeries_Tests', :exclusive => true do
+target 'Tests', :exclusive => true do
   pod 'Specta'
   pod 'Expecta'
 end
