@@ -52,5 +52,6 @@ code_sign_if_enabled() {
 
 
 if [[ "$CONFIGURATION" == "Debug copy" ]]; then
-  install_framework 'Pods/Forgeries.framework'
+  install_framework 'Pods-Tests/Expecta.framework'
+  install_framework 'Pods-Tests/Specta.framework'
 fi

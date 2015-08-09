@@ -1,6 +1,0 @@
-framework module Pods_Forgeries_Tests {
-  umbrella header "Pods-Forgeries_Tests-umbrella.h"
-
-  export *
-  module * { export * }
-}
