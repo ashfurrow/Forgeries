@@ -2,7 +2,7 @@
 
 [![Circle CI](https://circleci.com/gh/ashfurrow/Forgeries.svg?style=svg)](https://circleci.com/gh/ashfurrow/Forgeries)
 
-Forgeries is a library that makes unit testing iOS applications easier. UIKit has lots of limitations 
+Forgeries is a library that makes unit testing iOS applications easier. UIKit has lots of limitations
 that make sense in production code, but make testing difficult. Forgeries fixes that problem.
 
 ## Usage
@@ -33,9 +33,9 @@ These subclasses keep track of the number of times they've invoked their targets
 
 ### User Defaults
 
-There is also a replacement for `NSUserDefaults` named `ForgeriesUserDefaults`. Use this instead of modifying the `standardUserDefaults` singleton. 
+There is also a replacement for `NSUserDefaults` named `ForgeriesUserDefaults`. Use this instead of modifying the `standardUserDefaults` singleton.
 
-The replacement also includes an optional `replaceStandardUserDefaultsWith:`, which uses OCMock. You need to separately install OCMock in order to use this. 
+The replacement also includes an optional `replaceStandardUserDefaultsWith:`, which uses OCMock. You need to separately install OCMock in order to use this.
 
 Or, you can (and should) do the following...
 
@@ -109,6 +109,8 @@ import Forgeries
 @import Forgeries;
 // or #import <Forgeries/Forgeries.h>
 ```
+
+If you're using CocoaPods frameworks and want to use OCMock, you should use `pod 'forgeries/Mocks'`.
 
 ## Author
 
