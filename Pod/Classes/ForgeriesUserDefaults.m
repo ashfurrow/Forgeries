@@ -112,6 +112,11 @@
     [_defaults addEntriesFromDictionary:dictionary];
 }
 
+- (void)removeObjectForKey:(id<NSCopying>)key
+{
+    [self.defaults removeObjectForKey:key];
+}
+
 - (NSDictionary *)persistentDomainForName:(NSString *)domainName
 {
     return _defaults;
