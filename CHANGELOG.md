@@ -1,3 +1,7 @@
+## 0.2.2 - unreleased
+
+- Adds removeObjectForKey to ForgeriesDefault
+
 ## 0.2.1 September 15 2015
 
 - Add support for CocoaPods frameworks + semi-weak OCMock linking via the `Mocks` subspec.
