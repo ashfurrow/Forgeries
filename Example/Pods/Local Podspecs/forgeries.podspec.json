@@ -1,6 +1,6 @@
 {
   "name": "Forgeries",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "summary": "Helper methods for testing iOS code.",
   "description": "Some helper methods for writing unit tests against iOS code. Currently:\n\n- UIGestureRecognizer subclasses.",
   "homepage": "https://github.com/ashfurrow/Forgeries",
@@ -11,14 +11,30 @@
   },
   "source": {
     "git": "https://github.com/ashfurrow/Forgeries.git",
-    "tag": "0.2.0"
+    "tag": "0.2.1"
   },
   "social_media_url": "https://twitter.com/ashfurrow",
   "platforms": {
     "ios": "7.0"
   },
   "requires_arc": true,
-  "source_files": "Pod/Classes/**/*",
-  "public_header_files": "Pod/Classes/**/*.h",
-  "frameworks": "UIKit"
+  "default_subspecs": "Core",
+  "subspecs": [
+    {
+      "name": "Core",
+      "source_files": "Pod/Classes/**/*",
+      "public_header_files": "Pod/Classes/**/*.h"
+    },
+    {
+      "name": "Mocks",
+      "dependencies": {
+        "OCMock": [
+
+        ],
+        "Forgeries/Core": [
+
+        ]
+      }
+    }
+  ]
 }

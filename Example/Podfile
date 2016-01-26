@@ -1,8 +1,7 @@
-source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
 
-pod "Forgeries", :path => "../"
-
-target 'Tests', :exclusive => true do
+target 'Tests' do
+  pod "Forgeries", :path => "../"
   pod 'Specta'
   pod 'Expecta'
 end
