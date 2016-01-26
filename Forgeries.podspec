@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
   s.name             = "Forgeries"
-  s.version          = "0.2.1"
-  s.summary          = "Helper methods for testing iOS code."
+  s.version          = "0.5.0"
+  s.summary          = "Smart subclasses for testing UIKit code."
   s.description      = <<-DESC
-                       Some helper methods for writing unit tests against iOS code. Currently:
-
-                       - UIGestureRecognizer subclasses.
+					   Forgeries is a library that makes unit testing iOS applications easier. UIKit has lots of limitations
+					   that make sense in production code, but make testing difficult. Forgeries fixes that problem. Currently
+					   it includes subclasses for UIGestureRecognizers, NSUserDefaults and NSFileManager.
                        DESC
   s.homepage         = "https://github.com/ashfurrow/Forgeries"
   s.license          = 'MIT'
@@ -14,8 +14,10 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/ashfurrow/Forgeries.git", :tag => s.version }
   s.social_media_url = 'https://twitter.com/ashfurrow'
   s.platform     = :ios, '7.0'
-  s.requires_arc = true
   s.default_subspec = "Core"
+
+  # To ensure that it isn't called in App code
+  s.frameworks = 'Foundation', 'XCTest'
 
   s.subspec "Core" do |ss|
     ss.source_files = 'Pod/Classes/**/*'
@@ -23,7 +25,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec "Mocks" do |ss|
-    # Allow CP frameworks to specificly connect the two
+    # Allow CP frameworks to specifically connect the two:
     ss.dependency "OCMock"
     ss.dependency "Forgeries/Core"
   end
