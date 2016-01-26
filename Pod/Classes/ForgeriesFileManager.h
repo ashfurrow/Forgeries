@@ -8,7 +8,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 /// Provides a NSUserDefault compatible API but is
-/// much simpler, and allows for easier introspection
+/// much simpler, and allows for easier introspection.
 
 @interface ForgeriesFileManager : NSFileManager
 
@@ -19,8 +19,13 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)defaultManager;
 #endif
 
-/// This will generate a file mapping where it will generate the ForgeryFiles for you
+/// This will generate a file mapping where it will generate the `ForgeryFile`s for you
 /// based on the mapping dict you provide. Values can be NSString or NSDictionaries.
+
+/// The filemap supports shortcuts, to make it easier to deal with paths:
+/// - App Bundle     : @"/app/thing.txt"
+/// - User Documents : @"/docs/thing.txt"
+///
 + (instancetype)withFileStringMap:(NSDictionary <NSString *, id>*)dictionary;
 
 /// Just offering up the full dictionary of the underlying file mapping data,

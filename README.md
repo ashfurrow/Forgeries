@@ -7,7 +7,13 @@ that make sense in production code, but make testing difficult. Forgeries fixes 
 
 ## Usage
 
-Currently, the library provides subclasses of the standard gesture recognizers, as well as a replacement for `NSUserDefaults`.
+Currently, the library provides testing replacements for:
+
+- [Standard gesture recognizers](#gesture-recognizers)
+- [NSUserDefaults](#user-defaults)
+- [NSFileManager](#file-manager)
+
+These can be used with [Dependency Injection](#dependency-injection), or by using OCMock to replace global singletons.
 
 ### Gesture Recognizers
 
@@ -33,11 +39,32 @@ These subclasses keep track of the number of times they've invoked their targets
 
 ### User Defaults
 
-There is also a replacement for `NSUserDefaults` named `ForgeriesUserDefaults`. Use this instead of modifying the `standardUserDefaults` singleton.
+`ForgeriesUserDefaults` is a class which is API compatible with NSUserDefaults. It has a few extra tools that make it useful for testing:
 
-The replacement also includes an optional `replaceStandardUserDefaultsWith:`, which uses OCMock. You need to separately install OCMock in order to use this.
+- A quick API `[ForgeriesUserDefaults defaults:@{}]` for setting up defaults from a dictionary
+- APIs for inspecting the `lastSetKey`, `lastRequestedKey` and whether it has been synchronised via `hasSyncronised`
+- Offers a subscripting interface so you can easily edit the defaults instance
+- Can replace `[NSUserDefaults standardUserDefaults]` when OCMock is available in the test target
 
-Or, you can (and should) do the following...
+_Note this class isn't yet a subclass of NSUserDefaults, and so cannot be DI'd in to Swift classes._
+
+### File Manager
+
+`ForgeriesFileManager` is still new, so it's API is relatively limited as we find more use cases for it.
+
+- A quick API for setting up defaults from a dictionary
+  ``` objc
+    ForgeriesFileManager *fm = [ForgeriesFileManager withFileStringMap:@{
+         @"/docs/EchoTest.json" : @{ @"updated_at" : @"2001-01-23" },
+         @"/app/EchoTest.json": @{ @"updated_at" : @"1985-01-23" },
+		 @"/docs/VERSION" : @"1.0.1"
+    }];
+  ```
+
+- This API will automatically convert dictionaries to raw JSON data, or let you create files with text
+- Uses an in-memory store for file lookup, and accessing data. Faster, and won't change per-developer
+- Is a subclass of NSFileManager, with functions it doesn't support raising exceptions. Help us add more functions.
+- Can replace `[NSFileManager defaultManager]` when OCMock is available in the test target
 
 ### Dependency Injection
 
@@ -81,6 +108,8 @@ subject.recognizer = recognizer;
 expect(subject).to( /* have done something, whatever it is you're testing for */ );
 ```
 
+If you're interested in dependency injection, we strongly recommend watching this [talk from Jon Reid]()
+
 ## Requirements
 
 Requires iOS 7 or higher.
@@ -91,11 +120,10 @@ Forgeries is available through [CocoaPods](http://cocoapods.org). To install it,
 
 ```ruby
 target 'MyApp_Tests' do
+  inherit! :search_paths
 
   pod 'forgeries'
-
   ...
-
 end
 ```
 
@@ -112,10 +140,10 @@ import Forgeries
 
 If you're using CocoaPods frameworks and want to use OCMock, you should use `pod 'forgeries/Mocks'`.
 
-## Author
+## Authors
 
-Ash Furrow, ash@ashfurrow.com
-Orta Therox, orta.therox@gmail.com
+- Ash Furrow, ash@ashfurrow.com
+- Orta Therox, orta.therox@gmail.com
 
 ## License
 

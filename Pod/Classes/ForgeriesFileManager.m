@@ -1,4 +1,5 @@
 #import "Forgeries.h"
+#import "Forgeries-Macros.h"
 
 #if ForgeriesIncludesOCMock
 #import <OCMock/OCMock.h>

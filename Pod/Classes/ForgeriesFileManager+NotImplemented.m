@@ -1,4 +1,5 @@
-#import "Forgeries.h"
+#import "ForgeriesFileManager.h"
+#import "Forgeries-Macros.h"
 
 @interface ForgeriesFileManager(NotImplemented)
 @end
