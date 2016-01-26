@@ -1,4 +1,8 @@
-## 0.2.2 - unreleased
+## 0.5.0 January 26 2016
+
+- NSFileManager shpport.
+
+## 0.2.2 
 
 - Adds removeObjectForKey to ForgeriesDefault
 
