@@ -1,6 +1,7 @@
 # Forgeries
 
 [![Circle CI](https://circleci.com/gh/ashfurrow/Forgeries.svg?style=svg)](https://circleci.com/gh/ashfurrow/Forgeries)
+![Forgeries Logo](https://cloud.githubusercontent.com/assets/49038/12582759/f6a2c294-c436-11e5-9ee1-aea3e7256240.jpg)
 
 Forgeries is a library that makes unit testing iOS applications easier. UIKit has lots of limitations
 that make sense in production code, but make testing difficult. Forgeries fixes that problem.
