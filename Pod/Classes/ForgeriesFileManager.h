@@ -7,8 +7,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSData *data;
 @end
 
-/// Provides a NSUserDefault compatible API but is
-/// much simpler, and allows for easier introspection.
+/// Provides a NSFileManager compatible API but allows you to have an
+/// in-memory lookup store with a simple dictionary based file system API
 
 @interface ForgeriesFileManager : NSFileManager
 
