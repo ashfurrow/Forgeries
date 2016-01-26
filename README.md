@@ -109,7 +109,7 @@ subject.recognizer = recognizer;
 expect(subject).to( /* have done something, whatever it is you're testing for */ );
 ```
 
-If you're interested in dependency injection, we strongly recommend watching this [talk from Jon Reid]()
+If you're interested in dependency injection, we strongly recommend watching this [talk from Jon Reid](http://qualitycoding.org/dependency-injection/)
 
 ## Requirements
 
