@@ -20,8 +20,8 @@
 + (id)replaceDefaultFileManager
 {
     OCMockObject *mockClass = [OCMockObject niceMockForClass:NSFileManager.class];
-    ForgeriesUserDefaults *defaults = [ForgeriesFileManager defaults:dictionary];
-    [[[mockClass stub] andReturn:defaults] defaultManager];
+    ForgeriesFileManager *manager = [ForgeriesFileManager withFileStringMap:@{}];
+    [[[mockClass stub] andReturn:manager] defaultManager];
     return mockClass;
 }
 
