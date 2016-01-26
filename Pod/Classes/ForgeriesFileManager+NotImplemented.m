@@ -11,7 +11,6 @@
 
 - (nullable NSArray<NSURL *> *)contentsOfDirectoryAtURL:(NSURL *)url includingPropertiesForKeys:(nullable NSArray<NSString *> *)keys options:(NSDirectoryEnumerationOptions)mask error:(NSError **)error { NotYetImplmented; };
 
-- (NSArray<NSURL *> *)URLsForDirectory:(NSSearchPathDirectory)directory inDomains:(NSSearchPathDomainMask)domainMask { NotYetImplmented; }
 
 - (nullable NSURL *)URLForDirectory:(NSSearchPathDirectory)directory inDomain:(NSSearchPathDomainMask)domain appropriateForURL:(nullable NSURL *)url create:(BOOL)shouldCreate error:(NSError **)error { NotYetImplmented; }
 
@@ -57,7 +56,6 @@
 - (BOOL)changeCurrentDirectoryPath:(NSString *)path { NotYetImplmented; }
 
 
-- (BOOL)fileExistsAtPath:(NSString *)path { NotYetImplmented; }
 - (BOOL)fileExistsAtPath:(NSString *)path isDirectory:(nullable BOOL *)isDirectory { NotYetImplmented; }
 - (BOOL)isReadableFileAtPath:(NSString *)path { NotYetImplmented; }
 - (BOOL)isWritableFileAtPath:(NSString *)path { NotYetImplmented; }
@@ -76,8 +74,6 @@
 
 - (nullable NSArray<NSString *> *)subpathsAtPath:(NSString *)path { NotYetImplmented; }
 
-
-- (nullable NSData *)contentsAtPath:(NSString *)path { NotYetImplmented; }
 - (BOOL)createFileAtPath:(NSString *)path contents:(nullable NSData *)data attributes:(nullable NSDictionary<NSString *, id> *)attr { NotYetImplmented; }
 
 - (const char *)fileSystemRepresentationWithPath:(NSString *)path { NotYetImplmented; }

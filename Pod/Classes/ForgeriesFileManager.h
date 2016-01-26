@@ -20,8 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 #endif
 
 /// This will generate a file mapping where it will generate the ForgeryFiles for you
-/// based on the mapping dict you provide.
-+ (instancetype)withFileStringMap:(NSDictionary <NSString *, NSString *>*)dictionary;
+/// based on the mapping dict you provide. Values can be NSString or NSDictionaries.
++ (instancetype)withFileStringMap:(NSDictionary <NSString *, id>*)dictionary;
 
 /// Just offering up the full dictionary of the underlying file mapping data,
 /// as this is for testing, more introspective power is a priority

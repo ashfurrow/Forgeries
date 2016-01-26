@@ -1,10 +1,16 @@
-#import "ForgeriesFileManager.h"
+#import "Forgeries.h"
 
 #if ForgeriesIncludesOCMock
 #import <OCMock/OCMock.h>
 #endif
 
 @implementation ForgeryFile
+
+- (NSURL *)urlRepresentation
+{
+    return [NSURL fileURLWithPath:self.path];
+}
+
 @end
 
 @implementation ForgeriesFileManager
@@ -20,11 +26,11 @@
 
 + (instancetype)defaultManager
 {
-    return (id)[NSFileManager defaltManagere];
+    return (id)[NSFileManager defaultManager];
 }
 #endif
 
-+ (instancetype)withFileStringMap:(NSDictionary <NSString *, NSString *>*)dictionary
++ (instancetype)withFileStringMap:(NSDictionary <NSString *, id>*)dictionary
 {
     ForgeriesFileManager *fileManager = [[ForgeriesFileManager alloc] init];
 
@@ -32,7 +38,14 @@
     for (NSString *key in dictionary.allKeys) {
         ForgeryFile *file = [[ForgeryFile alloc] init];
         file.path = key;
-        file.data = [dictionary[key] dataUsingEncoding:NSUTF8StringEncoding];
+        id object = dictionary[key];
+
+        if ([object isKindOfClass:NSString.class]) {
+            file.data = [object dataUsingEncoding:NSUTF8StringEncoding];
+        } else if ([object isKindOfClass:NSDictionary.class]) {
+            file.data = [NSJSONSerialization dataWithJSONObject:object options:NSJSONWritingPrettyPrinted error:nil];
+        }
+
         fileMap[key] = file;
     }
     fileManager.fileMap = fileMap;
@@ -49,5 +62,56 @@
     return self;
 }
 
+# pragma mark - Some Mapping functions
 
+- (NSArray<ForgeryFile *> *)filesMatchingPath:(NSString *)string
+{
+    NSMutableArray<ForgeryFile *> *files = [NSMutableArray array];
+    for (NSString *path in self.fileMap.allKeys) {
+        if ([path hasPrefix:string]) {
+            [files addObject:self.fileMap[path]];
+        }
+    }
+    return files;
+}
+
+- (NSArray<NSURL *> *)urlsForFiles:(NSArray<ForgeryFile *> *)files
+{
+    NSMutableArray<NSURL *> *urls = [NSMutableArray array];
+    for (ForgeryFile *file in files) {
+        [urls addObject:file.urlRepresentation];
+    }
+    return urls;
+}
+
+# pragma mark - Shorthand support
+
+- (NSString *)shorthandForSearchPathDirectory:(NSSearchPathDirectory)directory
+{
+    switch (directory) {
+        case NSDocumentDirectory:
+            return @"/docs/";
+        default:
+            NotYetImplmented;
+    }
+}
+
+#pragma mark - Custom NSFileManager Overrides
+
+- (NSArray<NSURL *> *)URLsForDirectory:(NSSearchPathDirectory)directory inDomains:(NSSearchPathDomainMask)domainMask
+{
+    NSString *path = [self shorthandForSearchPathDirectory:directory];
+    return @[[NSURL fileURLWithPath:path]];
+}
+
+- (BOOL)fileExistsAtPath:(NSString *)path
+{
+    return [self filesMatchingPath:path].count > 0;
+}
+
+- (nullable NSData *)contentsAtPath:(NSString *)path
+{
+    ForgeryFile *file = [self filesMatchingPath:path].firstObject;
+    return  [file data];
+}
 @end
