@@ -68,7 +68,7 @@
 {
     NSMutableArray<ForgeryFile *> *files = [NSMutableArray array];
     for (NSString *path in self.fileMap.allKeys) {
-        if ([path hasPrefix:string]) {
+        if ([path hasPrefix:[self shorthandForFilePath:string]]) {
             [files addObject:self.fileMap[path]];
         }
     }
@@ -85,6 +85,13 @@
 }
 
 # pragma mark - Shorthand support
+
+- (NSString *)shorthandForFilePath:(NSString *)filepath
+{
+    NSString *appPath = [[NSBundle mainBundle] bundlePath];
+    filepath = [filepath stringByReplacingOccurrencesOfString:appPath withString:@"/app"];
+    return filepath;
+}
 
 - (NSString *)shorthandForSearchPathDirectory:(NSSearchPathDirectory)directory
 {
