@@ -1,17 +1,7 @@
-
-#define ForgeriesIncludesOCMock __has_include(<OCMock/OCMock.h>)
-
 /// Provides a NSUserDefault compatible API but is
 /// much simpler, and allows for easier introspection
 
 @interface ForgeriesUserDefaults : NSObject
-
-#if ForgeriesIncludesOCMock
-/// Replaces the NSUserDefault standardUserDefaults method with a ForgeriesUserDefaults
-+ (id)replaceStandardUserDefaultsWith:(NSDictionary *)dictionary;
-/// The returned method when the above is called
-+ (instancetype)standardUserDefaults;
-#endif
 
 /// Returns a defaults based on a dictionary.
 + (instancetype)defaults:(NSDictionary *)dictionary;

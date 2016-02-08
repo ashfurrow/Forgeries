@@ -1,9 +1,6 @@
-#import "Forgeries.h"
 #import "Forgeries-Macros.h"
-
-#if ForgeriesIncludesOCMock
+#import "ForgeriesFileManager.h"
 #import <OCMock/OCMock.h>
-#endif
 
 @implementation ForgeryFile
 
@@ -15,21 +12,6 @@
 @end
 
 @implementation ForgeriesFileManager
-
-#if ForgeriesIncludesOCMock
-+ (id)replaceDefaultFileManager
-{
-    OCMockObject *mockClass = [OCMockObject niceMockForClass:NSFileManager.class];
-    ForgeriesFileManager *manager = [ForgeriesFileManager withFileStringMap:@{}];
-    [[[mockClass stub] andReturn:manager] defaultManager];
-    return mockClass;
-}
-
-+ (instancetype)defaultManager
-{
-    return (id)[NSFileManager defaultManager];
-}
-#endif
 
 + (instancetype)withFileStringMap:(NSDictionary <NSString *, id>*)dictionary
 {

@@ -1,8 +1,5 @@
 #import "ForgeriesUserDefaults.h"
-
-#if ForgeriesIncludesOCMock
 #import <OCMock/OCMock.h>
-#endif
 
 @interface ForgeriesUserDefaults ()
 // This is used by QLPreviewController for something.
@@ -11,21 +8,6 @@
 
 
 @implementation ForgeriesUserDefaults
-
-#if ForgeriesIncludesOCMock
-+ (id)replaceStandardUserDefaultsWith:(NSDictionary *)dictionary
-{
-    OCMockObject *mockClass = [OCMockObject niceMockForClass:NSUserDefaults.class];
-    ForgeriesUserDefaults *defaults = [ForgeriesUserDefaults defaults:dictionary];
-    [[[mockClass stub] andReturn:defaults] standardUserDefaults];
-    return mockClass;
-}
-
-+ (instancetype)standardUserDefaults
-{
-    return (id)[NSUserDefaults standardUserDefaults];
-}
-#endif
 
 + (instancetype)defaults:(NSDictionary *)dictionary
 {

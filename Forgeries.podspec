@@ -13,21 +13,23 @@ Pod::Spec.new do |s|
                          "Orta Therox" => "orta.therox@gmail.com" }
   s.source           = { :git => "https://github.com/ashfurrow/Forgeries.git", :tag => s.version }
   s.social_media_url = 'https://twitter.com/ashfurrow'
-  s.platform     = :ios, '7.0'
+  s.platform     = :ios, '8.0'
   s.default_subspec = "Core"
 
   # To ensure that it isn't called in App code
   s.frameworks = 'Foundation', 'XCTest'
 
   s.subspec "Core" do |ss|
-    ss.source_files = 'Pod/Classes/**/*'
-    ss.public_header_files = 'Pod/Classes/**/*.h'
+    ss.source_files = 'Pod/Classes/*'
+    ss.public_header_files = 'Pod/Classes/*.h'
   end
 
   s.subspec "Mocks" do |ss|
     # Allow CP frameworks to specifically connect the two:
     ss.dependency "OCMock"
     ss.dependency "Forgeries/Core"
+    ss.source_files = 'Pod/Classes/Mocks/*'
+    ss.public_header_files = 'Pod/Classes/Mocks/*.h'
   end
 
 end

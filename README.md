@@ -13,6 +13,7 @@ Currently, the library provides testing replacements for:
 - [Standard gesture recognizers](#gesture-recognizers)
 - [NSUserDefaults](#user-defaults)
 - [NSFileManager](#file-manager)
+- [View trait collections](#trait-collections)
 
 These can be used with [Dependency Injection](#dependency-injection), or by using OCMock to replace global singletons.
 
@@ -66,6 +67,10 @@ _Note this class isn't yet a subclass of NSUserDefaults, and so cannot be DI'd i
 - Uses an in-memory store for file lookup, and accessing data. Faster, and won't change per-developer
 - Is a subclass of NSFileManager, with functions it doesn't support raising exceptions. Help us add more functions.
 - Can replace `[NSFileManager defaultManager]` when OCMock is available in the test target
+
+### Trait Collections
+
+
 
 ### Dependency Injection
 
@@ -123,9 +128,15 @@ Forgeries is available through [CocoaPods](http://cocoapods.org). To install it,
 target 'MyApp_Tests' do
   inherit! :search_paths
 
-  pod 'forgeries'
+  pod 'Forgeries'
   ...
 end
+```
+
+That will import the core functionality, not including mock stuff. If you want to use Forgeries with OCMock, use the following instead:
+
+```ruby
+pod 'Forgeries/Mocks'
 ```
 
 Now import the library in your unit tests.
@@ -138,8 +149,6 @@ import Forgeries
 @import Forgeries;
 // or #import <Forgeries/Forgeries.h>
 ```
-
-If you're using CocoaPods frameworks and want to use OCMock, you should use `pod 'forgeries/Mocks'`.
 
 ## Authors
 

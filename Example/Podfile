@@ -1,7 +1,9 @@
 platform :ios, '8.0'
 
-target 'Tests' do
-  pod "Forgeries", :path => "../"
+use_frameworks!
+
+target 'Unit Tests' do
+  pod 'Forgeries/Mocks', :path => '../'
   pod 'Specta'
   pod 'Expecta'
 end
