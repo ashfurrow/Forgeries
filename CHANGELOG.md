@@ -1,3 +1,9 @@
+## 
+## Next
+
+- New subspec layout for frameworks support.
+- New trait collection stubbing.
+
 ## 0.5.0 January 26 2016
 
 - NSFileManager shpport.
