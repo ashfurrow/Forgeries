@@ -20,14 +20,16 @@ Pod::Spec.new do |s|
   s.frameworks = 'Foundation', 'XCTest'
 
   s.subspec "Core" do |ss|
-    ss.source_files = 'Pod/Classes/**/*'
-    ss.public_header_files = 'Pod/Classes/**/*.h'
+    ss.source_files = 'Pod/Classes/*'
+    ss.public_header_files = 'Pod/Classes/*.h'
   end
 
   s.subspec "Mocks" do |ss|
     # Allow CP frameworks to specifically connect the two:
     ss.dependency "OCMock"
     ss.dependency "Forgeries/Core"
+    ss.source_files = 'Pod/Classes/Mocks/*'
+    ss.public_header_files = 'Pod/Classes/Mocks/*.h'
   end
 
 end

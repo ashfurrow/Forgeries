@@ -1,0 +1,1 @@
+../../../../../Pod/Classes/Mocks/ForgeriesTraitCollections.h

@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5E7A1D501B78115A0083B47A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7A1D4F1B78115A0083B47A /* Tests.m */; };
-		D206D35C0EEF87BB00C602E6 /* libPods-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D3725646B197951FA13D04 /* libPods-Tests.a */; };
+		5E2320181C690705003E3FC7 /* TraitCollectionTests.m in Resources */ = {isa = PBXBuildFile; fileRef = 5E2320171C690705003E3FC7 /* TraitCollectionTests.m */; };
+		6AC33496B062062E83BC26EE /* Pods_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1068899C9D3D56B83D359AD2 /* Pods_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		22D3725646B197951FA13D04 /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1068899C9D3D56B83D359AD2 /* Pods_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E2320171C690705003E3FC7 /* TraitCollectionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraitCollectionTests.m; sourceTree = "<group>"; };
 		5E7A1D4B1B78115A0083B47A /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E7A1D4E1B78115A0083B47A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5E7A1D4F1B78115A0083B47A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6003F591195388D20070C39A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -31,7 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D206D35C0EEF87BB00C602E6 /* libPods-Tests.a in Frameworks */,
+				6AC33496B062062E83BC26EE /* Pods_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,8 +41,8 @@
 		5E7A1D4C1B78115A0083B47A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				5E7A1D4F1B78115A0083B47A /* Tests.m */,
 				5E7A1D4D1B78115A0083B47A /* Supporting Files */,
+				5E2320171C690705003E3FC7 /* TraitCollectionTests.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -81,7 +81,7 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				22D3725646B197951FA13D04 /* libPods-Tests.a */,
+				1068899C9D3D56B83D359AD2 /* Pods_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -142,7 +142,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6003F585195388D10070C39A /* Build configuration list for PBXProject "Forgeries" */;
+			buildConfigurationList = 6003F585195388D10070C39A /* Build configuration list for PBXProject "forgeries" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -165,6 +165,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E2320181C690705003E3FC7 /* TraitCollectionTests.m in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,7 +224,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E7A1D501B78115A0083B47A /* Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,12 +271,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
 			};
 			name = "Debug copy";
 		};
@@ -330,7 +329,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Debug copy";
 		};
-		6003F585195388D10070C39A /* Build configuration list for PBXProject "Forgeries" */ = {
+		6003F585195388D10070C39A /* Build configuration list for PBXProject "forgeries" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5EF3D0CB1B7810ED00265146 /* Debug copy */,

@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '82C42D831CF276B177C8D0F1'
+               BlueprintIdentifier = 'F581C23BDF5E0917013DF7B9'
                BlueprintName = 'Forgeries'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libForgeries.a'>
+               BuildableName = 'Forgeries.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
