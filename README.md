@@ -70,7 +70,11 @@ _Note this class isn't yet a subclass of NSUserDefaults, and so cannot be DI'd i
 
 ### Trait Collections
 
+You can stub the trait collections for `UIView` and `UIViewController`, the two `UITraitEnvironments` that we currently support.
 
+```objc
+[subject stubHorizontalSizeClass:UIUserInterfaceSizeClassRegular];
+```
 
 ### Dependency Injection
 
