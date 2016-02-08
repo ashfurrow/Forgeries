@@ -19,7 +19,7 @@
                BlueprintIdentifier = "5E73C92B1C69156800496C7C"
                BuildableName = "Unit Tests.xctest"
                BlueprintName = "Unit Tests"
-               ReferencedContainer = "container:forgeries.xcodeproj">
+               ReferencedContainer = "container:Forgeries.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
