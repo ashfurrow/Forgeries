@@ -84,8 +84,8 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug copy" ]]; then
-  install_framework "Pods-Tests/Expecta.framework"
-  install_framework "Pods-Tests/Forgeries.framework"
-  install_framework "Pods-Tests/OCMock.framework"
-  install_framework "Pods-Tests/Specta.framework"
+  install_framework "Pods-Unit Tests/Expecta.framework"
+  install_framework "Pods-Unit Tests/Forgeries.framework"
+  install_framework "Pods-Unit Tests/OCMock.framework"
+  install_framework "Pods-Unit Tests/Specta.framework"
 fi
