@@ -1,5 +1,4 @@
-## 
-## Next
+## 0.6.0 February 8 2016
 
 - New subspec layout for frameworks support.
 - New trait collection stubbing.
