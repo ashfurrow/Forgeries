@@ -4,7 +4,7 @@ machine:
 test:
   override:
     - xctool
-      -workspace 'Demo/Forgeries.xcworkspace' 
+      -workspace 'Example/Forgeries.xcworkspace' 
       -scheme 'Unit Tests' 
       -sdk iphonesimulator 
       -destination 'platform=iOS Simulator,name=iPhone 6,OS=latest'
