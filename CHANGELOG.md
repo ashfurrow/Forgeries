@@ -1,3 +1,7 @@
+## 0.6.1 February 8 2016
+
+- Removes duplicate category file.
+
 ## 0.6.0 February 8 2016
 
 - New subspec layout for frameworks support.
