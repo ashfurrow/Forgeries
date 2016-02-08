@@ -133,7 +133,7 @@ target 'MyApp_Tests' do
 end
 ```
 
-That will import the core functionality, which is currently just `UIGestureRecognizer` subclasses. For everything else, use:
+That will import the core functionality, not including mock stuff. If you want to use Forgeries with OCMock, use the following instead:
 
 ```ruby
 pod 'Forgeries/Mocks'

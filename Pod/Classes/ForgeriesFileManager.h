@@ -1,5 +1,3 @@
-#define ForgeriesIncludesOCMock __has_include(<OCMock/OCMock.h>)
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ForgeryFile : NSObject
@@ -11,13 +9,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// in-memory lookup store with a simple dictionary based file system API
 
 @interface ForgeriesFileManager : NSFileManager
-
-#if ForgeriesIncludesOCMock
-/// Replaces the NSUserDefault standardUserDefaults method with a ForgeriesUserDefaults
-+ (id)replaceDefaultFileManager;
-/// The returned method when the above is called
-+ (instancetype)defaultManager;
-#endif
 
 /// This will generate a file mapping where it will generate the `ForgeryFile`s for you
 /// based on the mapping dict you provide. Values can be NSString or NSDictionaries.

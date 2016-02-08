@@ -3,11 +3,6 @@
 
 @interface ForgeriesUserDefaults : NSObject
 
-/// Replaces the NSUserDefault standardUserDefaults method with a ForgeriesUserDefaults
-+ (id)replaceStandardUserDefaultsWith:(NSDictionary *)dictionary;
-/// The returned method when the above is called
-+ (instancetype)standardUserDefaults;
-
 /// Returns a defaults based on a dictionary.
 + (instancetype)defaults:(NSDictionary *)dictionary;
 
