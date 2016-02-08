@@ -1,6 +1,11 @@
 machine:
   xcode:
     version: "7.1"
-  environment:
-    foo: bar
-    baz: 123
+test:
+  override:
+    - xctool
+      -workspace 'Demo/Forgeries.xcworkspace' 
+      -scheme 'Unit Tests' 
+      -sdk iphonesimulator 
+      -destination 'platform=iOS Simulator,name=iPhone 6,OS=latest'
+      test 
