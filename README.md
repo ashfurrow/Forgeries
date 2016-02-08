@@ -123,9 +123,18 @@ Forgeries is available through [CocoaPods](http://cocoapods.org). To install it,
 target 'MyApp_Tests' do
   inherit! :search_paths
 
-  pod 'forgeries'
+  pod 'Forgeries'
   ...
 end
+```
+
+That will import the core functionality, which is currently just `UIGestureRecognizer` subclasses. For everything else, use:
+
+```ruby
+target 'MyApp_Tests' do
+inherit! :search_paths
+
+pod 'Forgeries'
 ```
 
 Now import the library in your unit tests.
@@ -138,8 +147,6 @@ import Forgeries
 @import Forgeries;
 // or #import <Forgeries/Forgeries.h>
 ```
-
-If you're using CocoaPods frameworks and want to use OCMock, you should use `pod 'forgeries/Mocks'`.
 
 ## Authors
 
