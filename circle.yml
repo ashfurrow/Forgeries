@@ -8,4 +8,6 @@ test:
       -scheme 'Unit Tests' 
       -sdk iphonesimulator 
       -destination 'platform=iOS Simulator,name=iPhone 6,OS=latest'
+      -reporter plain:$CIRCLE_ARTIFACTS/xctool.log 
+      -reporter junit:$CIRCLE_TEST_REPORTS/xcode/results.xml
       test 
