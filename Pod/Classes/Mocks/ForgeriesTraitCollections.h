@@ -1,17 +1,15 @@
 @import UIKit;
 
-@interface UIViewController (Forgeries)
-
-/// Creates a partial mock of the receive that stubs its trait collection.
-- (void)stubTraitCollection:(UITraitCollection *)traitCollection;
-
-/// Creates a partial mock of the receiver that stubs its horizontal size class.
-- (void)stubHorizontalSizeClass:(UIUserInterfaceSizeClass)horizontalSizeClass;
-
-/// Creates a partial mock of the receiver that stubs its vertical size class.
-- (void)stubVerticalSizeClass:(UIUserInterfaceSizeClass)verticalSizeClass;
-
-/// Creates a partial mock of the receiver that stubs its size classes.
-- (void)stubHorizontalSizeClass:(UIUserInterfaceSizeClass)horizontalSizeClass verticalSizeClass:(UIUserInterfaceSizeClass)verticalSizeClass;
-
+#define ExtendTraitEnvironment(specific_class) \
+@interface specific_class (Forgeries) \
+- (void)stubTraitCollection:(UITraitCollection *)traitCollection; \
+\
+- (void)stubHorizontalSizeClass:(UIUserInterfaceSizeClass)horizontalSizeClass; \
+\
+- (void)stubVerticalSizeClass:(UIUserInterfaceSizeClass)verticalSizeClass; \
+\
+- (void)stubHorizontalSizeClass:(UIUserInterfaceSizeClass)horizontalSizeClass verticalSizeClass:(UIUserInterfaceSizeClass)verticalSizeClass; \
 @end
+
+ExtendTraitEnvironment(UIViewController)
+ExtendTraitEnvironment(UIView)

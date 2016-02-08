@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
                          "Orta Therox" => "orta.therox@gmail.com" }
   s.source           = { :git => "https://github.com/ashfurrow/Forgeries.git", :tag => s.version }
   s.social_media_url = 'https://twitter.com/ashfurrow'
-  s.platform     = :ios, '7.0'
+  s.platform     = :ios, '8.0'
   s.default_subspec = "Core"
 
   # To ensure that it isn't called in App code

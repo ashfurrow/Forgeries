@@ -1,5 +1,5 @@
-#import "Forgeries.h"
 #import "Forgeries-Macros.h"
+#import "ForgeriesFileManager.h"
 #import <OCMock/OCMock.h>
 
 @implementation ForgeryFile

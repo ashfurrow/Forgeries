@@ -13,6 +13,7 @@ Currently, the library provides testing replacements for:
 - [Standard gesture recognizers](#gesture-recognizers)
 - [NSUserDefaults](#user-defaults)
 - [NSFileManager](#file-manager)
+- [View trait collections](#trait-collections)
 
 These can be used with [Dependency Injection](#dependency-injection), or by using OCMock to replace global singletons.
 
@@ -66,6 +67,10 @@ _Note this class isn't yet a subclass of NSUserDefaults, and so cannot be DI'd i
 - Uses an in-memory store for file lookup, and accessing data. Faster, and won't change per-developer
 - Is a subclass of NSFileManager, with functions it doesn't support raising exceptions. Help us add more functions.
 - Can replace `[NSFileManager defaultManager]` when OCMock is available in the test target
+
+### Trait Collections
+
+
 
 ### Dependency Injection
 
