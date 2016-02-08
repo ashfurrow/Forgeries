@@ -136,10 +136,7 @@ end
 That will import the core functionality, which is currently just `UIGestureRecognizer` subclasses. For everything else, use:
 
 ```ruby
-target 'MyApp_Tests' do
-inherit! :search_paths
-
-pod 'Forgeries'
+pod 'Forgeries/Mocks'
 ```
 
 Now import the library in your unit tests.
