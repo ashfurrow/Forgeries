@@ -11,13 +11,22 @@
 
 @synthesize statusBarHidden=ourStatusBarHidden;
 
-
 /// We can't call the super init function
 /// or it will raise
 
 - (instancetype)init
 {
     return self;
+}
+
+- (BOOL)statusBarHidden
+{
+    return ourStatusBarHidden;
+}
+
+- (BOOL)isStatusBarHidden
+{
+    return ourStatusBarHidden;
 }
 
 - (void)setStatusBarHidden:(BOOL)statusBarHidden
