@@ -1,3 +1,7 @@
+## 0.6.2
+
+- Core runs without OCMock now
+
 ## 0.6.1 February 8 2016
 
 - Removes duplicate category file.
@@ -11,7 +15,7 @@
 
 - NSFileManager shpport.
 
-## 0.2.2 
+## 0.2.2
 
 - Adds removeObjectForKey to ForgeriesDefault
 
