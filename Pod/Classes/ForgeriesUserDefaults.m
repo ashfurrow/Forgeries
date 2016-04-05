@@ -1,5 +1,4 @@
 #import "ForgeriesUserDefaults.h"
-#import <OCMock/OCMock.h>
 
 @interface ForgeriesUserDefaults ()
 // This is used by QLPreviewController for something.
