@@ -1,7 +1,5 @@
 #import "Forgeries-Macros.h"
 #import "ForgeriesApplication.h"
-#import <OCMock/OCMock.h>
-
 
 @interface ForgeriesApplication()
 @property(nonatomic,getter=isStatusBarHidden) BOOL statusBarHidden;
