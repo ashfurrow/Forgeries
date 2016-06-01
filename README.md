@@ -14,6 +14,8 @@ Currently, the library provides testing replacements for:
 - [NSUserDefaults](#user-defaults)
 - [NSFileManager](#file-manager)
 - [View trait collections](#trait-collections)
+- [UIApplication](#uiapplication)
+
 
 These can be used with [Dependency Injection](#dependency-injection), or by using OCMock to replace global singletons.
 
@@ -75,6 +77,10 @@ You can stub the trait collections for `UIView` and `UIViewController`, the two 
 ```objc
 [subject stubHorizontalSizeClass:UIUserInterfaceSizeClassRegular];
 ```
+
+### UIApplication
+
+Nothing to out of the normal here, you can create a `ForgeriesApplication` which is a UIApplication subclass for DI-ing a test. 
 
 ### Dependency Injection
 
