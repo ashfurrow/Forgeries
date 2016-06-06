@@ -12,10 +12,13 @@
 /// We can't call the super init function
 /// or it will raise
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wobjc-designated-initializers"
 - (instancetype)init
 {
     return self;
 }
+#pragma clang diagnostic pop
 
 - (BOOL)statusBarHidden
 {

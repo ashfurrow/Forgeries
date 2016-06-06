@@ -103,12 +103,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5E73C9311C69156800496C7C /* Build configuration list for PBXNativeTarget "Unit Tests" */;
 			buildPhases = (
-				17DA90F649C3385EA5DD1E63 /* Check Pods Manifest.lock */,
+				17DA90F649C3385EA5DD1E63 /* [CP] Check Pods Manifest.lock */,
 				5E73C9281C69156800496C7C /* Sources */,
 				5E73C9291C69156800496C7C /* Frameworks */,
 				5E73C92A1C69156800496C7C /* Resources */,
-				F209311AB0FB45107CA7F5DE /* Embed Pods Frameworks */,
-				74359ED5608206360195DCAB /* Copy Pods Resources */,
+				F209311AB0FB45107CA7F5DE /* [CP] Embed Pods Frameworks */,
+				74359ED5608206360195DCAB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -134,7 +134,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6003F585195388D10070C39A /* Build configuration list for PBXProject "forgeries" */;
+			buildConfigurationList = 6003F585195388D10070C39A /* Build configuration list for PBXProject "Forgeries" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -163,14 +163,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		17DA90F649C3385EA5DD1E63 /* Check Pods Manifest.lock */ = {
+		17DA90F649C3385EA5DD1E63 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,14 +178,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		74359ED5608206360195DCAB /* Copy Pods Resources */ = {
+		74359ED5608206360195DCAB /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,14 +193,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Unit Tests/Pods-Unit Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F209311AB0FB45107CA7F5DE /* Embed Pods Frameworks */ = {
+		F209311AB0FB45107CA7F5DE /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,6 +267,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ashfurrow.Unit-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				WARNING_CFLAGS = "-Wobjc-designated-initializers";
 			};
 			name = "Debug copy";
 		};
@@ -321,7 +322,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Debug copy";
 		};
-		6003F585195388D10070C39A /* Build configuration list for PBXProject "forgeries" */ = {
+		6003F585195388D10070C39A /* Build configuration list for PBXProject "Forgeries" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5EF3D0CB1B7810ED00265146 /* Debug copy */,
