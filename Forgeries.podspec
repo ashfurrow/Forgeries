@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "Forgeries"
-  s.version          = "0.7.0"
+  s.version          = "1.0.0"
   s.summary          = "Smart subclasses for testing UIKit code."
   s.description      = <<-DESC
 					   Forgeries is a library that makes unit testing iOS applications easier. UIKit has lots of limitations
