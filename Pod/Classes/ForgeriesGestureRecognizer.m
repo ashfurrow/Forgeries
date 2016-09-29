@@ -73,6 +73,7 @@ void *ForgeryGestureRecognizerTargetActionsKey = &ForgeryGestureRecognizerTarget
 
 #define ForgeryUIGestureRecognizerSubclassImplementation(name) \
 @implementation name \
+@synthesize state; \
 - (instancetype)initWithTarget:(id)target action:(SEL)action { \
     self = [super initWithTarget:target action:action]; \
     if (self != nil) { \
@@ -92,8 +93,14 @@ void *ForgeryGestureRecognizerTargetActionsKey = &ForgeryGestureRecognizerTarget
 - (CGPoint)locationInView:(UIView *)view { \
     return self.testing_location; \
 } \
-- (CGFloat)velocity { \
+- (CGPoint)velocityInView:(UIView *)view { \
     return self.testing_velocity; \
+} \
+- (CGPoint)translationInView:(UIView *)view { \
+    return self.testing_translation; \
+} \
+- (UIGestureRecognizerState)state {\
+    return self.testing_state; \
 } \
 @end
 

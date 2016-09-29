@@ -1,3 +1,8 @@
+## 1.0.0
+
+- Fixes on gesture recognizer forgeries to return CGPoint instead of CGFloat for velocity and translation.
+- Adds testing_state for mocking gesture recognizer state.
+
 ## 0.6.2
 
 - Core runs without OCMock now

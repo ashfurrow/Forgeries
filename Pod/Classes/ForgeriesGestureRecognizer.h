@@ -10,7 +10,9 @@
 @interface name : superclass \
  \
 @property (nonatomic, readwrite) CGPoint testing_location; \
-@property (nonatomic, readwrite) CGFloat testing_velocity; \
+@property (nonatomic, readwrite) CGPoint testing_velocity; \
+@property (nonatomic, readwrite) CGPoint testing_translation; \
+@property (nonatomic, readwrite) UIGestureRecognizerState testing_state; \
  \
 @end
 
